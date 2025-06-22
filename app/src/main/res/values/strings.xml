@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">UAS</string>
+    <string name="log_out">Log Out</string>
+    <string name="search_history">Search History</string>
+    <string name="language_preferences">Language Preferences</string>
+    <string name="notification">Notification</string>
+    <string name="edit_password">Edit Password</string>
+    <string name="uid">ID: 277148</string>
+    <string name="number">+62899 9213 5555</string>
+    <string name="name">Username</string>
+    <string name="email">email@gmail.com</string>
+</resources>
