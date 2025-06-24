@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scrollView2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,32 +11,42 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:paddingHorizontal="16dp">
+        android:orientation="vertical">
 
-        <!-- Profile Image -->
-        <ImageView
-            android:id="@+id/profileImage"
-            android:layout_width="169dp"
-            android:layout_height="169dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/circle_bg"
-            android:padding="5dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/profile" />
+        <FrameLayout
+            android:layout_width="411dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="0dp">
+
+            <!-- Kotak biru belakang -->
+            <View
+                android:layout_width="411dp"
+                android:layout_height="140dp"
+                android:background="#086788" />
+
+            <!-- Foto profil menimpa kotak -->
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center|bottom"
+                android:background="@drawable/circle_bg"
+                android:padding="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile" />
+        </FrameLayout>
 
         <!-- Username -->
         <TextView
             android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="0dp"
             android:text="@string/name"
             android:textColor="#07A0C3"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:fontFamily="@font/sf_compact_bold"/>
+            android:fontFamily="@font/poppins_semibold" />
 
         <!-- Email -->
         <TextView
@@ -45,87 +56,284 @@
             android:text="@string/email"
             android:textColor="#07A0C3"
             android:textSize="14sp"
-            android:fontFamily="@font/sf_compact_medium" />
-
-        <!-- ID -->
-        <TextView
-            android:id="@+id/uid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/uid"
-            android:textColor="#07A0C3"
-            android:textSize="14sp"
-            android:fontFamily="@font/sf_compact_medium" />
+            android:fontFamily="@font/poppins_medium" />
 
         <!-- Option Buttons -->
-        <Button
-            android:id="@+id/btnEditPassword"
-            android:layout_width="370dp"
-            android:layout_height="69dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/custom_button1"
-            android:text="@string/edit_password"
-            android:textColor="#086788"
-            android:textSize="24sp"
-            android:textAllCaps="false"
-            android:gravity="center_vertical|start"
-            android:paddingStart="24dp"
-            android:fontFamily="@font/sf_compact_bold"/>
+        <LinearLayout
+            android:id="@+id/btnSavePlace"
+            android:layout_width="340dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal"
+            android:background="@drawable/custom_button2"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
 
-        <Button
-            android:id="@+id/btnNotification"
-            android:layout_width="370dp"
-            android:layout_height="69dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/custom_button1"
-            android:text="@string/notification"
-            android:textColor="#086788"
-            android:textSize="24sp"
-            android:textAllCaps="false"
-            android:gravity="center_vertical|start"
-            android:paddingStart="24dp"
-            android:fontFamily="@font/sf_compact_bold" />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/bookmark"
+                android:layout_marginLeft="16dp"
+                app:tint="#086788" />
 
-        <Button
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/save"
+                android:textColor="#086788"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppins_semibold" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/angle_left"
+                android:rotation="180"
+                android:layout_marginRight="16dp"
+                app:tint="#086788" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="318dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="3dp"
+            android:background="#86C5E8" />
+
+        <LinearLayout
+            android:id="@+id/btnEditProfile"
+            android:layout_width="370dp"
+            android:layout_height="63dp"
+            android:orientation="horizontal"
+            android:background="@drawable/custom_button1"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/pencil"
+                android:layout_marginLeft="16dp"
+                app:tint="#086788" />
+
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Edit Profile"
+                android:textColor="#086788"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppins_semibold" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/angle_left"
+                android:rotation="180"
+                android:layout_marginRight="16dp"
+                app:tint="#086788" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="318dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:background="#86C5E8" />
+
+        <LinearLayout
             android:id="@+id/btnLanguage"
             android:layout_width="370dp"
-            android:layout_height="69dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="63dp"
+            android:orientation="horizontal"
             android:background="@drawable/custom_button1"
-            android:text="@string/language_preferences"
-            android:textColor="#086788"
-            android:textSize="24sp"
-            android:textAllCaps="false"
-            android:gravity="center_vertical|start"
-            android:paddingStart="24dp"
-            android:fontFamily="@font/sf_compact_bold" />
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
 
-        <Button
-            android:id="@+id/btnSearchHistory"
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/language"
+                android:layout_marginLeft="16dp"
+                app:tint="#086788" />
+
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Language"
+                android:textColor="#086788"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppins_semibold" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/angle_left"
+                android:rotation="180"
+                android:layout_marginRight="16dp"
+                app:tint="#086788" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="318dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:background="#86C5E8" />
+
+        <LinearLayout
+            android:id="@+id/btnSupport"
             android:layout_width="370dp"
-            android:layout_height="69dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="63dp"
+            android:orientation="horizontal"
             android:background="@drawable/custom_button1"
-            android:text="@string/search_history"
-            android:textColor="#086788"
-            android:textSize="24sp"
-            android:textAllCaps="false"
-            android:gravity="center_vertical|start"
-            android:paddingStart="24dp"
-            android:fontFamily="@font/sf_compact_bold" />
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/customer_service"
+                android:layout_marginLeft="16dp"
+                app:tint="#086788" />
+
+            <Space
+                android:layout_width="11dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Support"
+                android:textColor="#086788"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppins_semibold" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/angle_left"
+                android:rotation="180"
+                android:layout_marginRight="16dp"
+                app:tint="#086788" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="318dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:background="#86C5E8" />
+
+        <LinearLayout
+            android:id="@+id/btnSetting"
+            android:layout_width="370dp"
+            android:layout_height="63dp"
+            android:orientation="horizontal"
+            android:background="@drawable/custom_button1"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/setting"
+                android:layout_marginLeft="16dp"
+                app:tint="#086788" />
+
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Settings"
+                android:textColor="#086788"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppins_semibold" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/angle_left"
+                android:rotation="180"
+                android:layout_marginRight="16dp"
+                app:tint="#086788" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="318dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:background="#86C5E8" />
 
         <!-- Log Out Button -->
-        <Button
-            android:id="@+id/btnLogout"
+        <LinearLayout
+            android:id="@+id/btnLogOut"
             android:layout_width="370dp"
-            android:layout_height="69dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/custom_button2"
-            android:text="@string/log_out"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textAllCaps="false"
-            android:fontFamily="@font/sf_compact_bold" />
+            android:layout_height="63dp"
+            android:orientation="horizontal"
+            android:background="@drawable/custom_button1"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/logout"
+                android:layout_marginLeft="16dp"
+                app:tint="#880808" />
+
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Log Out"
+                android:textColor="#880808"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppins_semibold" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/angle_left"
+                android:rotation="180"
+                android:layout_marginRight="16dp"
+                app:tint="#880808" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
