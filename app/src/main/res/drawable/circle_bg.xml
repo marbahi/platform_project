@@ -1,24 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <!-- Shadow layer -->
-    <item>
-        <shape android:shape="oval">
-            <solid android:color="#FF000000"/>
-        </shape>
-        <padding
-            android:top="32dp"
-            android:bottom="0dp"
-            android:left="0dp"
-            android:right="0dp"  />
-    </item>
-
-    <!-- Main circle with stroke -->
     <item android:top="0dp">
         <shape android:shape="oval">
             <stroke
                 android:width="5dp"
-                android:color="#07A0C3" /> <!-- warna stroke -->
+                android:color="#DAF8FF" /> <!-- warna stroke -->
         </shape>
     </item>
 </layer-list>
